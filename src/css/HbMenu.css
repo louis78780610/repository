@@ -1,0 +1,124 @@
+
+
+
+@media screen and (max-width: 767px) {
+  nav {
+    display: none;
+    position: fixed;
+    width: 80%;
+    background-color: rgb(212 212 212);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s;
+    z-index: 3;
+    padding: 25px;
+    box-sizing: border-box;
+  }
+
+  nav.show {
+    display: block;
+    width: 100%;
+    height: 80%;
+  }
+
+  nav .header-inner {
+    padding: 0;
+  }
+
+  nav .header-inner ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; /* 中央揃え */
+  }
+
+  nav .header-inner ul li {
+    margin: 0;
+    border-top: 1px solid #fff;
+  }
+
+  .burger-btn {
+    display: block;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    z-index: 3;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+
+  .burger-btn span {
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.5s;
+    border-radius: 4px;
+  }
+
+
+/* 他のスタイルは省略 */
+
+.burger-btn span:nth-child(1) {
+  top: 4px;
+  transform: translateY(0) rotate(0);
+}
+.burger-btn span:nth-child(2) {
+  top: 14px;
+  transform: translateY(0) rotate(0);
+}
+.burger-btn span:nth-child(3) {
+  bottom: 4px;
+  transform: translateY(0) rotate(0);
+}
+
+/* クロス（X）になるためのスタイル */
+.burger-btn.cross span:nth-child(1) {
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+}
+.burger-btn.cross span:nth-child(2) {
+  display: none;
+}
+.burger-btn.cross span:nth-child(3) {
+  bottom: 50%;
+  transform: translateY(50%) rotate(-45deg);
+}
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    display: block; /* 768px以上の場合は常に表示 */
+    position: static; /* 固定された位置ではなく、通常のドキュメントフローに配置される */
+    background-color: transparent;
+    padding: 20px;
+    width: auto;
+  }
+
+  nav .header-inner {
+    display: flex; /* 横並びにする */
+    align-items: center; /* 垂直方向に中央揃え */
+    justify-content: space-evenly;
+  }
+
+  nav .header-inner ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+
+  nav .header-inner ul li {
+    border-top: none; /* ボーダーを削除 */
+  }
+
+  .burger-btn {
+    display: none; /* ボタンを非表示にする */
+  }
+}
