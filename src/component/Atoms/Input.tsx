@@ -7,11 +7,12 @@ interface InputProps {
   value?: string;
   autoComplete?: string
   defaultValue?: string
+  maxLength?: number;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void; // onChange プロパティを追加
   readOnly?: boolean;
 }
 
-const Input: React.FC<InputProps> = ({type='', name='', placeholder='', value, autoComplete='', onChange, defaultValue, readOnly}) => {
+const Input: React.FC<InputProps> = ({type='', name='', placeholder='', value, autoComplete='', onChange, defaultValue, maxLength, readOnly}) => {
   return(
       <input 
       type={type} 
@@ -21,6 +22,7 @@ const Input: React.FC<InputProps> = ({type='', name='', placeholder='', value, a
       autoComplete={autoComplete}
       onChange={onChange} 
       defaultValue={defaultValue}
+      maxLength={maxLength}
       readOnly={readOnly} // readOnlyプロパティが指定されている場合のみ設定
       className="flex-1 border border-gray-200 rounded p-2 lg:w-full"
       /> // onChange イベントを追加

@@ -91,13 +91,15 @@ const LoginContent = () => {
         inputType="text" 
         inputName="email" 
         value={formData.email} 
+        maxLength={254}
         errorText={validationErrors.email || errors.email} 
         onChange={handleChange}
       />
       <FormField 
         labelTitle="パスワード" 
         inputType="password" 
-        inputName="password" 
+        inputName="password"
+        maxLength={20}
         value={formData.password} 
         errorText={validationErrors.password || errors.password} 
         onChange={handleChange}

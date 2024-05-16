@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState } from 'react';
 import personImage from '../../images/person-image.jpg';
 
 const IMAGE_ID = "imageId";
@@ -21,9 +21,7 @@ const UploadImage = () => {
         htmlFor={IMAGE_ID}
         className={`border border-gray-300 rounded-full py-10 w-20 flex items-center justify-center overflow-hidden cursor-pointer mx-auto mt-10 mb-10 px-10`}
         style={{
-          background: `url(${imageData || personImage}) center/cover`, // ローカルストレージから取得した画像データを表示
-          backgroundSize: "cover", // cover を指定
-          backgroundRepeat: "no-repeat",
+          background: `url(${imageData || personImage}) center/cover no-repeat`, // ローカルストレージから取得した画像データを表示
         }}
       >
         {/* InputImage コンポーネントは不要 */}
