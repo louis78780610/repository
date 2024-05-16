@@ -1,5 +1,3 @@
-// MicContent.tsx
-
 import React, { useState } from 'react';
 import FormField from "../../Molecules/FormField";
 import Title from "../../Atoms/Title";

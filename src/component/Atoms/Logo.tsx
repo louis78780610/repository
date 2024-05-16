@@ -5,7 +5,7 @@ const Logo = () => {
       <img 
       src={toppageImg} 
       alt="Top Page Logo" 
-      className='h-12 w-auto'
+      className='h-12 w-auto transition duration-300 transform hover:opacity-50'
       />
   );
 };

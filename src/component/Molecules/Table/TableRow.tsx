@@ -1,4 +1,3 @@
-// TableRow.tsx
 import React from 'react';
 import TableCell from '../../Atoms/TableCell';
 
