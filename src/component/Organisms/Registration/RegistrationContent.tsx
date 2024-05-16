@@ -34,7 +34,6 @@ const RegistrationContent = () => {
   const [imageError, setImageError] = useState<string>('');
 
 
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     dispatch(updateFormData({ name, value }));
@@ -125,6 +124,7 @@ const RegistrationContent = () => {
             inputName="email" 
             value={formData.email} 
             errorText={validationErrors.email || errors.email} 
+            maxLength={254}
             onChange={handleChange}
           />
           <FormField 
@@ -132,6 +132,7 @@ const RegistrationContent = () => {
             inputType="password" 
             inputName="password" 
             value={formData.password} 
+            maxLength={20}
             errorText={validationErrors.password || errors.password} 
             onChange={handleChange}
           />
@@ -140,6 +141,7 @@ const RegistrationContent = () => {
             inputType="password" 
             inputName="checkPassword" 
             value={formData.checkPassword} 
+            maxLength={20}
             errorText={validationErrors.checkPassword || errors.checkPassword} 
             onChange={handleChange}
           />
@@ -147,7 +149,8 @@ const RegistrationContent = () => {
             labelTitle="ニックネーム(８文字以上)" 
             inputType="text" 
             inputName="name" 
-            value={formData.name} 
+            value={formData.name}
+            maxLength={20}
             errorText={validationErrors.name || errors.name} 
             onChange={handleChange}
           />

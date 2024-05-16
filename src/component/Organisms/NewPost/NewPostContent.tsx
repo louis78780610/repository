@@ -86,13 +86,15 @@ const NewPostContent = () => {
         type="text" 
         name="title" 
         placeholder="タイトル"
-        value={formData.title} 
+        value={formData.title}
+        maxLength={20}
         onChange={handleChange}
       />
       <ErrorMsg text={validationErrors.title || errors.title} />
       <TextArea 
         name='content'
         value={formData.content} 
+        maxLength={200}
         onChange={handleChange}
         />
       <ErrorMsg text={validationErrors.content || errors.content} />

@@ -93,7 +93,8 @@ const MicContent = () => {
             labelTitle="ニックネーム(８文字以上)" 
             inputType="text" 
             inputName="name" 
-            value={formData.name} 
+            value={formData.name}
+            maxLength={20}
             errorText={validationErrors.name || errors.name} 
             onChange={handleChange}
           />
@@ -102,6 +103,7 @@ const MicContent = () => {
             inputType="text" 
             inputName="email" 
             value={formData.email} 
+            maxLength={254}
             errorText={validationErrors.email || errors.email} 
             onChange={handleChange}
           />
@@ -125,112 +127,3 @@ const MicContent = () => {
 };
 
 export default MicContent;
-
-
-// import React, { useState } from 'react';
-// import FormField from "../../Molecules/FormField";
-// import Title from "../../Atoms/Title";
-// import Button from "../../Atoms/Button";
-// import RegistrationImage from '../Registration/RegistrationImage';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { updateFormData, setFieldError } from '../../../redux/micSlice'; // setFieldError をインポート
-// import { RootState } from '../../../redux/store';
-// import { ThunkDispatch } from '@reduxjs/toolkit';
-// import { PayloadAction } from '@reduxjs/toolkit';
-// import { useNavigate } from 'react-router-dom';
-
-
-// const MicContent = () => {
-//   const navigate = useNavigate();
-//   const dispatch = useDispatch<ThunkDispatch<RootState, unknown, PayloadAction>>();
-
-//   const formData = useSelector((state: RootState) => state.mic.formData);
-//   const errors = useSelector((state: RootState) => state.mic.errors);
-//   const isSubmitting = useSelector((state: RootState) => state.mic.submitting || false);
-
-//   const [validationErrors, setValidationErrors] = useState<{ [key: string]: string }>({});
-
-//   const [imageError, setImageError] = useState<string>('');
-
-//   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-//     const { name, value } = e.target;
-//     dispatch(updateFormData({ name, value }));
-//   };
-
-//   const handleButtonClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-//     e.preventDefault(); // デフォルトの動作を防ぐ
-//     // バリデーションを行う
-//     const errors: { [key: string]: string } = {};
-//     const regex = /^[a-zA-Z0-9_.+-]+@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/;
-
-//     if (!formData.name) {
-//       errors.name = "名前を入力してください";
-//     } else if (formData.name.length < 8) {
-//       errors.name = "名前は8文字以上で入力してください";
-//     }
-//     if (!formData.email) {
-//       errors.email = "メールアドレスを入力してください";
-//     } else if (!regex.test(formData.email)) {
-//       errors.email = "正しいメールアドレスを入力してください";
-//     }
-//     if (imageError) {
-//       errors.image = "画像ファイルが選択されていません。";
-//     }
-
-//     // エラーがあるかどうかチェック
-//     const hasError = Object.values(errors).some(error => error !== '');
-//     if (hasError) {
-//       // エラーがあればエラーメッセージを表示
-//       setValidationErrors(errors);
-//     } else {
-//       // エラーがなければページ遷移
-//       dispatch(setFieldError({})); // エラーをクリアする
-//       navigate("/MyPage"); // ページ遷移
-//     }
-//   };
-  
-//   return (
-//     <div className="h-screen w-full flex items-center justify-center pt-24 sm:mt-32 lg:mt-44">
-//       <form className="w-2/5 pt-36 md:w-full md:px-8 sm:w-3/5 lg:w-3/5">
-//       <div className="pb-7">
-//       <Title title="会員情報変更"/>
-//       </div>
-//       <div className="flex flex-col items-center">
-//         <FormField 
-//           labelTitle="ニックネーム(８文字以上)" 
-//           inputType="text" 
-//           inputName="name" 
-//           value={formData.name} 
-//           autoComplete="name"
-//           errorText={validationErrors.name || errors.name} 
-//           onChange={handleChange}
-//         />
-//         <FormField 
-//           labelTitle="ログインID(メールアドレス)" 
-//           inputType="text" 
-//           inputName="email" 
-//           value={formData.email} 
-//           errorText={validationErrors.email || errors.email} 
-//           autoComplete="email"
-//           onChange={handleChange}
-//         />
-//         <RegistrationImage 
-//           labelTitle="ユーザーアイコン画像" 
-//           errorText={imageError} 
-//           onImageError={setImageError}
-//         />
-//       </div>
-//       <div className="flex justify-end pt-7 pb-24 sm:pb-12 sm:pt-3">
-//           <Button 
-//             type="button" 
-//             disabled={isSubmitting} 
-//             onClick={handleButtonClick} 
-//             children="登録する"
-//           />
-//       </div>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default MicContent;

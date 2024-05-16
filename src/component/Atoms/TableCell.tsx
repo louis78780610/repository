@@ -23,18 +23,3 @@ const TableCell: React.FC<TableCellProps> = ({ children, onClick }) => {
 };
 
 export default TableCell;
-
-// // TableCell.tsx
-// import React from 'react';
-
-// interface TableCellProps {
-//   children: React.ReactNode;
-// }
-
-// const TableCell: React.FC<TableCellProps> = ({ children }) => {
-//   return <td className="border border-gray-300 border-2 py-2">
-//     {children}
-//     </td>;
-// };
-
-// export default TableCell;

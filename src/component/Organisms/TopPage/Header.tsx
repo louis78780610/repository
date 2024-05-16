@@ -1,35 +1,3 @@
-// import { FC, useState } from "react";
-// import HeaderUl from '../../Molecules/TopPage/HeaderUl';
-// import { HbButton } from "../../Atoms/HbButton";
-// import '../../../css/HbMenu.css';
-
-// const HbHeader: FC = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   const handleToggle = () => {
-//     setIsOpen(!isOpen);
-//   };
-
-//   return (
-//     <header className="header bg-neutral-500 text-white p-4 fixed top-0 left-0 w-full z-10">
-//       <div className="desktop-navigation">
-//         <HeaderUl id="desktop-navigation" />
-//       </div>
-//       <div className="mobile-navigation">
-//         <HbButton
-//           open={isOpen}
-//           onClick={handleToggle}
-//           controls="navigation"
-//           label="Toggle navigation"
-//         />
-//         <HeaderUl open={isOpen} id="navigation" />
-//       </div>
-//     </header>
-//   );
-// };
-
-// export default HbHeader;
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import HeaderUl from '../../Molecules/TopPage/HeaderUl';
@@ -46,7 +14,7 @@ const Header: React.FC = () => {
   };
 
   return(
-    <header className='header-class bg-neutral-500 text-white py-4 fixed top-0 w-full z-10 flex items-center justify-center md:justify-center md:justify-start sm:justify-start'>
+    <header className='header-class bg-neutral-500 text-white py-4 fixed top-0 w-full z-10 flex items-center justify-center md:justify-center md:justify-start'>
       <div className=''>
         <Link to="/"><Logo/></Link>
       </div>

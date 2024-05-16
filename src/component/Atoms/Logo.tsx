@@ -5,7 +5,7 @@ const Logo = () => {
       <img 
       src={toppageImg} 
       alt="Top Page Logo" 
-      className='h-12 w-auto sm:pl-48'
+      className='h-12 w-auto'
       />
   );
 };

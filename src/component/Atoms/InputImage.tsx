@@ -21,5 +21,3 @@ const InputImage = forwardRef<HTMLInputElement, Props>(
 );
 
 export default InputImage;
-
-// 多分使っていない

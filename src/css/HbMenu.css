@@ -1,12 +1,9 @@
-
-
-
 @media screen and (max-width: 767px) {
   nav {
     display: none;
     position: fixed;
     width: 80%;
-    background-color: rgb(212 212 212);
+    background-color: rgb(186, 183, 183);
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
