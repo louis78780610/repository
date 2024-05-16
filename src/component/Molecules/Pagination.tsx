@@ -18,7 +18,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
       pages.push(
         <li key={i} className={`page-item ${i === currentPage ? 'active' : ''}`}>
           <button
-            className="mx-2 rounded-md border border-gray-300 p-2"
+            className="mx-2 rounded-md border border-gray-300 p-2 transition duration-200 ease select-none hover:text-white hover:bg-gray-600 focus:outline-none focus:shadow-outline"
             onClick={() => onPageChange(i)}
             disabled={i === currentPage}
           >
@@ -35,11 +35,11 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
     <nav aria-label="Page navigation">
       <ul className="flex mt-8">
         <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
-          <button className="page-link rounded border border-gray-300 p-2" onClick={() => onPageChange(currentPage - 1)}>◀️</button>
+          <button className="page-link rounded border border-gray-300 p-2 transition duration-200 ease select-none hover:text-white hover:bg-gray-600 focus:outline-none focus:shadow-outline" onClick={() => onPageChange(currentPage - 1)}>◀️</button>
         </li>
         {renderPageNumbers()}
         <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
-          <button className="page-link rounded border border-gray-300 p-2" onClick={() => onPageChange(currentPage + 1)}>▶️</button>
+          <button className="page-link rounded border border-gray-300 p-2 transition duration-200 ease select-none hover:text-white hover:bg-gray-600 focus:outline-none focus:shadow-outline" onClick={() => onPageChange(currentPage + 1)}>▶️</button>
         </li>
       </ul>
     </nav>

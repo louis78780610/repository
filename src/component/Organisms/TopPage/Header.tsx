@@ -14,7 +14,7 @@ const Header: React.FC = () => {
   };
 
   return(
-    <header className='header-class bg-neutral-500 text-white py-4 fixed top-0 w-full z-10 flex items-center justify-center md:justify-center md:justify-start'>
+    <header className='header-class bg-neutral-500 shadow-lg text-white py-4 fixed top-0 w-full z-10 flex items-center justify-center md:justify-center md:justify-start'>
       <div className=''>
         <Link to="/"><Logo/></Link>
       </div>
