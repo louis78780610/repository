@@ -24,6 +24,7 @@ const MyPageHeaderUl = () => {
     // ログアウトの処理を行う
     dispatch(logout());
     dispatch(authLogout());
+    localStorage.removeItem('access_token') //ログアウト時にトークンを消している
     navigate('/'); // ログインページなど、ログアウト後に遷移するページのURLを指定
   };
     
